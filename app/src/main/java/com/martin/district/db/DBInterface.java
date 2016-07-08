@@ -85,4 +85,26 @@ public class DBInterface {
                 .orderAsc(DistrictInfoDao.Properties.AdCode).list();
     }
 
+    /***
+     * 查询城市
+     *
+     * @param cityCode
+     * @return
+     */
+    public List<DistrictInfo> queryDistrict(long cityCode) {
+        DistrictInfoDao dao = openReadableDb().getDistrictInfoDao();
+        return dao.queryBuilder().where(DistrictInfoDao.Properties.CityCode.eq(cityCode))
+                .orderAsc(DistrictInfoDao.Properties.AdCode).list();
+    }
+
+    /***
+     * 查询所有记录
+     *
+     * @return
+     */
+    public List<DistrictInfo> queryAll() {
+        DistrictInfoDao dao = openReadableDb().getDistrictInfoDao();
+        return dao.queryBuilder().orderAsc(DistrictInfoDao.Properties.AdCode).list();
+    }
+
 }

@@ -116,6 +116,7 @@ public class WheelView extends View {
     private List<OnWheelClickedListener> clickingListeners = new LinkedList<>();
 
     private Paint mSurroundingAreaOverlayPaint;
+    private int width;
 
     /**
      * Constructor
@@ -157,6 +158,7 @@ public class WheelView extends View {
      */
     private void initData(Context context) {
         scroller = new WheelScroller(getContext(), scrollingListener);
+        width = getContext().getResources().getDisplayMetrics().widthPixels;
     }
 
     // Scrolling listener
@@ -652,9 +654,9 @@ public class WheelView extends View {
 
             drawItems(canvas);
 
-            drawDarkenedSurroundingArea(canvas);
 //            drawCenterRect(canvas);
         }
+        drawDarkenedSurroundingArea(canvas);
 
 //        if (drawShadows) drawShadows(canvas);
     }
@@ -662,8 +664,8 @@ public class WheelView extends View {
     private void drawDarkenedSurroundingArea(Canvas canvas) {
         int center = getHeight() / 2;
         int offset = (int) (getItemHeight() / 2 * 1.2);
-        canvas.drawRect(0, 0, getWidth(), center - offset, mSurroundingAreaOverlayPaint);
-        canvas.drawRect(0, center + offset, getWidth(), getHeight(), mSurroundingAreaOverlayPaint);
+        canvas.drawRect(0, 0, width, center - offset, mSurroundingAreaOverlayPaint);
+        canvas.drawRect(0, center + offset, width, getHeight(), mSurroundingAreaOverlayPaint);
     }
 
 
@@ -705,7 +707,7 @@ public class WheelView extends View {
     private void drawCenterRect(Canvas canvas) {
         int center = getHeight() / 2;
         int offset = (int) (getItemHeight() / 2 * 1.2);
-        canvas.drawRect(0, center - offset, getWidth(), center + offset,mSurroundingAreaOverlayPaint);
+        canvas.drawRect(0, center - offset, getWidth(), center + offset, mSurroundingAreaOverlayPaint);
 //        centerDrawable.setBounds(0, center - offset, getWidth(), center + offset);
 //        centerDrawable.draw(canvas);
     }

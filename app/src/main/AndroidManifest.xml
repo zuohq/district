@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".DistrictApplication"
@@ -16,7 +17,7 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="762249c75f81f6bb081377156c74af72" />
+            android:value="0f48cad9e623838eabff4b64288fe5ac" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

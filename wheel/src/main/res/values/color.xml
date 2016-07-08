@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white_translucent">#B0FFFFFF</color>
-    <color name="surrounding_area">@color/white_translucent</color>
+    <color name="white_translucent">#20000000</color>
+    <color name="surrounding_area">#15000000</color>
 </resources>

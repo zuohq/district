@@ -108,7 +108,6 @@ public class MainActivity extends BaseActivity implements DistrictPopupWindow.Op
             mPopupWindow.setUp();
             mPopupWindow.showAtLocation(mRootLayout, Gravity.BOTTOM, 0, 0);
         }
-
     }
 
     @Override
